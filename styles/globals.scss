@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+div.page{
+    div.section-1{
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('/assets/imgs/section-1.png') no-repeat center center;
+        background-size: cover;
+        filter: grayscale(100%);
+    }
+}
+// mobile styles
+@media (max-width: 768px){
+    div.page{
+        div.section-1{
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url('/assets/imgs/section-1-mobile.png') no-repeat center center;
+            background-size: cover;
+        }
+    }
+}
