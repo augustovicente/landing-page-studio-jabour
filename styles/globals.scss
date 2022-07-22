@@ -8,6 +8,29 @@ div.page{
         url('/assets/imgs/section-1.png') no-repeat center center;
         background-size: cover;
         filter: grayscale(100%);
+        div.header{
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.4);
+            align-items: center;
+            div.logo{
+                width: 10%;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            div.links{
+                margin-left: auto;
+                padding: 0 50px;
+                display: flex;
+                gap: 50px;
+                a{
+                    color: #F2F2F2;
+                    text-decoration: none;
+                    font-family: 'Montserrat';
+                }
+            }
+        }
     }
 }
 // mobile styles

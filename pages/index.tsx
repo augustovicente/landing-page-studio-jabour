@@ -7,13 +7,17 @@ const Home: NextPage = () => {
     // changin the title of the page
     useEffect(() => {
         document.title = 'Studio Jabour'
-    }, [])
+    }, []);
+
     return (
         <div className='page'>
+            <Head>
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+            </Head>
             <div className='section-1'>
                 <div className='header'>
-                    <div className='logos'>
-                        
+                    <div className='logo'>
+                        <img src='/assets/imgs/logo.png' />
                     </div>
                     <div className='links'>
                         <a href="">Home</a>
