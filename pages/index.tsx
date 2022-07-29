@@ -13,6 +13,7 @@ const Home: NextPage = () => {
         <div className='page'>
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+                <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet' />
             </Head>
             <div className='section-1'>
                 <div className='header'>
@@ -27,7 +28,15 @@ const Home: NextPage = () => {
                     </div>
                 </div>
                 <div className='content'>
-                    
+                    <span className='text-brand'>
+                        STUDIOJABOUR
+                    </span>
+                    <span className='text-slogan'>
+                        SINTA-SE BEM E FIQUE AINDA MAIS INCRÍVEL
+                    </span>
+                    <div className='check-service-btn'>
+                       <span>VER SERVIÇOS</span>
+                    </div>
                 </div>
             </div>
         </div>
