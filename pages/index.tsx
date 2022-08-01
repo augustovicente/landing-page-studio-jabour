@@ -9,6 +9,29 @@ const Home: NextPage = () => {
         document.title = 'Studio Jabour'
     }, []);
 
+    const promos = [
+        {
+            img: '/assets/imgs/promo-1.png',
+            product: 'PROGRESSIVA',
+            price: '90',
+        },
+        {
+            img: '/assets/imgs/promo-2.png',
+            product: 'BOTOX',
+            price: '69',
+        },
+        {
+            img: '/assets/imgs/promo-3.png',
+            product: 'ESMALTAÇÃO EM GEL',
+            price: '59',
+        },
+        {
+            img: '/assets/imgs/promo-4.png',
+            product: 'FIBRA DE VIDRO',
+            price: '99',
+        }
+    ]
+
     return (
         <div className='page'>
             <Head>
@@ -37,6 +60,64 @@ const Home: NextPage = () => {
                     <div className='check-service-btn'>
                        <span>VER SERVIÇOS</span>
                     </div>
+                </div>
+            </div>
+            <div className='section-2'>
+                <div className='content'>
+                    <div className='left-div'>
+                        <span className='header'>CABELO</span>
+                        <span>CORTE</span>
+                        <span>ESCOVA</span>
+                        <span>OMBRE HAIR</span>
+                        <span>LUZES</span>
+                        <span>HIDRATAÇÃO</span>
+                        <span>PROGRESSIVA</span>
+                        <span>BOTOX</span>
+                    </div>
+                    <div className='right-div'>
+                        <span className='header'>UNHAS</span>
+                        <span>MANICURE</span>
+                        <span>PEDICURE</span>
+                        <span>ESMALTAÇÃO EM GEL</span>
+                        <span>ALONGAMENTO FIBRA DE VIDRO</span>
+                        <span>ALONGAMENTO EM GEL</span>
+                    </div>
+                </div>
+            </div>
+            <div className='section-3'>
+                <div className='header'>
+                    <span>APROVEITE AS PROMOÇÕES</span>
+                </div>
+                <div className='promos'>
+                    {promos.map((promo, index) => (
+                        <div className='promo' key={index}>
+                            <img src={promo.img} alt={promo.product} className='the-img' />
+                            <div className='product'>
+                                <span>{promo.product}</span>
+                                <span>
+                                    {(+promo.price).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className='section-4'>
+                <div className='center-content'>
+                    <img src="" alt="" />
+                    <div className='infos'>
+                        <div className='info-contact'>
+                            <span>ENTRE EM CONTATO</span>
+                            <span>WHATSAPP</span>
+                        </div>
+                        <span className='info-question'>
+                            QUER MARCAR SEU HORÁRIO?
+                        </span>
+                    </div>
+                </div>
+                <div className='footer-content'>
+                    <span>R. JULIO CESAR RIBEIRO, 415</span>
+                    <span>ACESSE A LOCALIZAÇÃO</span>
                 </div>
             </div>
         </div>
