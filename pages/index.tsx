@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { useEffect } from 'react'
+
 
 const Home: NextPage = () => {
     // changin the title of the page
@@ -91,7 +91,11 @@ const Home: NextPage = () => {
                 <div className='promos'>
                     {promos.map((promo, index) => (
                         <div className='promo' key={index}>
-                            <img src={promo.img} alt={promo.product} className='the-img' />
+                            <img
+                                src={promo.img}
+                                className='the-img' 
+                                alt={"Studio Jabur "+promo.product}
+                            />
                             <div className='product'>
                                 <span>{promo.product}</span>
                                 <span>
@@ -104,14 +108,15 @@ const Home: NextPage = () => {
             </div>
             <div className='section-4'>
                 <div className='center-content'>
-                    <img src="" alt="" />
+                    <img src="/assets/imgs/footer.png" alt="Studio Jabour Logo Dourada" />
                     <div className='infos'>
                         <div className='info-contact'>
                             <span>ENTRE EM CONTATO</span>
                             <span>WHATSAPP</span>
                         </div>
                         <span className='info-question'>
-                            QUER MARCAR SEU HORÁRIO?
+                            QUER MARCAR <br/>
+                            SEU HORÁRIO?
                         </span>
                     </div>
                 </div>
