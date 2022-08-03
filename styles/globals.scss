@@ -4,6 +4,7 @@ body{
 div.page{
     div.section-1, div.section-2, div.section-3, div.section-4{
         height: 100vh;
+        width: 100vw;
         display: flex;
     }
     div.section-1{
@@ -265,9 +266,133 @@ div.page{
 @media (max-width: 768px){
     div.page{
         div.section-1{
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-            url('/assets/imgs/section-1-mobile.png') no-repeat center center;
-            background-size: cover;
+            &::before{
+                background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('/assets/imgs/section-1-mobile.png') no-repeat center center;
+                background-size: cover;
+            }
+            div.header{
+                display: none;
+            }
+            div.content{
+                transform: translateY(0%);
+                span.text-brand{
+                    font-size: 30px;
+                }
+                span.text-slogan{
+                    padding: 0 15%;
+                    font-size: 10px;
+                    letter-spacing: 0.3em;
+                    text-align: center;
+                }
+            }
+        }
+        div.section-2{
+            div.content{
+                gap: 5%;
+                width: 100%;
+                div.left-div{
+                    width: 47.5%;
+                    gap: 10px;
+                    span{
+                        font-size: 15px;
+                        &.header{
+                            margin-bottom: 10px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                div.right-div{
+                    gap: 10px;
+                    width: 47.5%;
+                    span{
+                        width: 80%;
+                        font-size: 15px;
+                        &.header{
+                            margin-bottom: 10px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        div.section-3{
+            div.header{
+                font-size: 20px;
+                width: 70%;
+                text-align: center;
+            }
+            div.promos{
+                flex-wrap: wrap;
+                gap: 10px 5%;
+                padding: 0 15%;
+                div.promo{
+                    flex: 0 0 35%;
+                    width: 35%;
+                    img{
+                        height: 50% !important;
+                        width: 100% !important;
+                    }
+                    div.product{
+                        width: 100%;
+                        padding: 20px 0;
+                        border-radius: 0px 0px 20px 20px;
+                        height: 70px;
+                        span{
+                            &:first-child{
+                                font-size: 12px !important;
+                            }
+                            &:last-child{
+                                font-size: 10px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.section-4{
+            div.center-content{
+                img{
+                    width: 100%;
+                    margin-top: -30%;
+                }
+                div.infos{
+                    gap: 5%;
+                    width: 85%;
+                    div.info-contact{
+                        width: 100%;
+                        flex: 45%;
+                        span{
+                            font-size: 15px;
+                            line-height: 25px;
+                            text-align: center;
+                            &:last-child{
+                                font-size: 15px;
+                                line-height: 15px;
+                                padding: 5px 20px;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                    span.info-question{
+                        flex: 45%;
+                        font-size: 20px;
+                        line-height: 30px;
+                        width: 100%;
+                    }
+                }
+            }
+            div.footer-content{
+                margin-top: auto;
+                margin-bottom: 10%;
+                flex-direction: column-reverse;
+                span{
+                    font-size: 15px;
+                    &:last-child{
+                        font-size: 13px;
+                    }
+                }
+            }
         }
     }
 }
