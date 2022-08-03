@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect } from 'react'
+import * as Scroll from 'react-scroll';
 
 
 const Home: NextPage = () => {
