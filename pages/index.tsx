@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import * as Scroll from 'react-scroll';
-
+import { Element, scroller } from 'react-scroll'
 
 const Home: NextPage = () => {
     // changin the title of the page
@@ -33,13 +33,22 @@ const Home: NextPage = () => {
         }
     ]
 
+    const scroll_services = () =>
+    {
+        scroller.scrollTo('section-2', {
+            duration: 1000,
+            delay: 0,
+            smooth: true,
+        })
+    }
+
     return (
         <div className='page'>
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
                 <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet' />
             </Head>
-            <div className='section-1'>
+            <Element name='section-1' className='section-1'>
                 <div className='header'>
                     <div className='logo'>
                         <img src='/assets/imgs/logo.png' />
@@ -59,11 +68,11 @@ const Home: NextPage = () => {
                         SINTA-SE BEM E FIQUE AINDA MAIS INCRÍVEL
                     </span>
                     <div className='check-service-btn'>
-                       <span>VER SERVIÇOS</span>
+                       <span onClick={scroll_services}>VER SERVIÇOS</span>
                     </div>
                 </div>
-            </div>
-            <div className='section-2'>
+            </Element>
+            <Element name='section-2' className='section-2'>
                 <div className='content'>
                     <div className='left-div'>
                         <span className='header'>CABELO</span>
@@ -84,7 +93,7 @@ const Home: NextPage = () => {
                         <span>ALONGAMENTO EM GEL</span>
                     </div>
                 </div>
-            </div>
+            </Element>
             <div className='section-3'>
                 <div className='header'>
                     <span>APROVEITE AS PROMOÇÕES</span>
