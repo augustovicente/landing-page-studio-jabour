@@ -60,6 +60,12 @@ const Home: NextPage = () => {
                         <a href="">Contato</a>
                     </div>
                 </div>
+                <nav className='mobile-header'>
+                    <div className='logo'>
+                        <img src='/assets/imgs/logo.png' />
+                    </div>
+                    
+                </nav>
                 <div className='content'>
                     <span className='text-brand'>
                         STUDIOJABOUR
@@ -122,7 +128,9 @@ const Home: NextPage = () => {
                     <div className='infos'>
                         <div className='info-contact'>
                             <span>ENTRE EM CONTATO</span>
-                            <span>WHATSAPP</span>
+                            <span onClick={() => window.open('https://api.whatsapp.com/send?phone=5543996463569', '_blank')}>
+                                WHATSAPP
+                            </span>
                         </div>
                         <span className='info-question'>
                             QUER MARCAR <br/>
@@ -132,7 +140,9 @@ const Home: NextPage = () => {
                 </div>
                 <div className='footer-content'>
                     <span>R. JULIO CESAR RIBEIRO, 415</span>
-                    <span>ACESSE A LOCALIZAÇÃO</span>
+                    <span onClick={() => window.open('https://goo.gl/maps/EaQoc1vstdnatxRU6', '_blank')}>
+                        ACESSE A LOCALIZAÇÃO
+                    </span>
                 </div>
             </div>
         </div>

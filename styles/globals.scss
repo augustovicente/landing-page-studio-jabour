@@ -44,6 +44,9 @@ div.page{
                 }
             }
         }
+        nav.mobile-header{
+            display: none;
+        }
         div.content{
             margin: auto;
             display: flex;
@@ -273,6 +276,18 @@ div.page{
             }
             div.header{
                 display: none;
+            }
+            nav.mobile-header{
+                display: flex;
+                background-color: rgba(0, 0, 0, 0.4);
+                z-index: 1;
+                div.logo{
+                    width: 25%;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
             }
             div.content{
                 transform: translateY(0%);
