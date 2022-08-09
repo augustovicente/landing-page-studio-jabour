@@ -1,14 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import * as Scroll from 'react-scroll';
-import { Element, scroller } from 'react-scroll'
+import { Element, scroller, Link } from 'react-scroll'
 
 const Home: NextPage = () => {
     // changin the title of the page
     useEffect(() => {
         document.title = 'Studio Jabour'
     }, []);
+    const [sidebar_open, setSidebar_open] = useState(false);
 
     const promos = [
         {
@@ -43,28 +44,71 @@ const Home: NextPage = () => {
     }
 
     return (
-        <div className='page'>
+        <div className={'page '+(sidebar_open?'sidebar':'')}>
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
                 <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet' />
             </Head>
+            { sidebar_open && (<div className='sidebar-menu'>
+                <div className='menu-item'>
+                    <img src="/assets/imgs/close.svg" className='close' onClick={() => setSidebar_open(false)}/>
+                    <Link
+                        duration={1000}
+                        smooth={true}
+                        delay={500}
+                        to={'section-1'} 
+                        onClick={() => setSidebar_open(false)}
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        duration={1000}
+                        smooth={true}
+                        delay={500}
+                        to={'section-2'} 
+                        onClick={() => setSidebar_open(false)}
+                    >
+                        Serviços
+                    </Link>
+                    <Link
+                        duration={1000}
+                        smooth={true}
+                        delay={500}
+                        to={'section-3'} 
+                        onClick={() => setSidebar_open(false)}
+                    >
+                        Promoções
+                    </Link>
+                    <Link
+                        duration={1000}
+                        smooth={true}
+                        delay={500}
+                        to={'section-4'} 
+                        onClick={() => setSidebar_open(false)}
+                    >
+                        Contato
+                    </Link>
+                </div>
+            </div>) }
             <Element name='section-1' className='section-1'>
                 <div className='header'>
                     <div className='logo'>
                         <img src='/assets/imgs/logo.png' />
                     </div>
                     <div className='links'>
-                        <a href="">Home</a>
-                        <a href="">Serviços</a>
-                        <a href="">Promoções</a>
-                        <a href="">Contato</a>
+                        <Link duration={1000} smooth={true} delay={0} to={'section-1'}>Home</Link>
+                        <Link duration={1000} smooth={true} delay={0} to={'section-2'}>Serviços</Link>
+                        <Link duration={1000} smooth={true} delay={0} to={'section-3'}>Promoções</Link>
+                        <Link duration={1000} smooth={true} delay={0} to={'section-4'}>Contato</Link>
                     </div>
                 </div>
                 <nav className='mobile-header'>
                     <div className='logo'>
                         <img src='/assets/imgs/logo.png' />
                     </div>
-                    
+                    <div className='menu' onClick={() => setSidebar_open(true)}>
+                        <img src='/assets/imgs/hamburguer.svg' />
+                    </div>
                 </nav>
                 <div className='content'>
                     <span className='text-brand'>
@@ -100,7 +144,7 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </Element>
-            <div className='section-3'>
+            <Element name='section-3' className='section-3'>
                 <div className='header'>
                     <span>APROVEITE AS PROMOÇÕES</span>
                 </div>
@@ -121,8 +165,8 @@ const Home: NextPage = () => {
                         </div>
                     ))}
                 </div>
-            </div>
-            <div className='section-4'>
+            </Element>
+            <Element name='section-4' className='section-4'>
                 <div className='center-content'>
                     <img src="/assets/imgs/footer.png" alt="Studio Jabour Logo Dourada" />
                     <div className='infos'>
@@ -144,7 +188,8 @@ const Home: NextPage = () => {
                         ACESSE A LOCALIZAÇÃO
                     </span>
                 </div>
-            </div>
+            </Element>
+
         </div>
     )
 }
